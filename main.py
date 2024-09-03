@@ -10,6 +10,7 @@ if __name__ == "__main__":
 
     # Pull data
     pull_wasSuccess, pull_message = gp.git_pull()  # Update local repository
+    commit_message_prefix = 'Testing Email Fix'
     
     if not pull_wasSuccess:
         msg.send_email(smtp_server, port, sender_email, sender_password, recipients, 
@@ -19,7 +20,7 @@ if __name__ == "__main__":
         
     
     # Push Data
-    push_wasSuccess, push_message = gc.git_commit_push(branch='thisBranchDoesNotExist', commit_message_prefix = 'Testing Email Fail')  # Commit and push changes
+    push_wasSuccess, push_message = gc.git_commit_push(commit_message_prefix=commit_message_prefix)  # Commit and push changes
 
     if not push_wasSuccess:
         msg.send_email(smtp_server, port, sender_email, sender_password, recipients, 
@@ -27,6 +28,3 @@ if __name__ == "__main__":
             message = push_message
             )
     
-    
-    
-    # push_wasSuccess = gc.git_commit_push(commit_message_prefix = 'Test Email')  # Commit and push changes
