@@ -10,7 +10,7 @@ def git_pull(branch='main'):
         print("Git Warning: Git pull operation failed. No changes made.")
         print(f"Git Error details: {e.stderr.decode().strip()}")
 
-def git_commit_push(branch='main'):
+def git_commit_push(branch='main', commit_message_prefix = "Daily Data Update"):
     try:
         # Adding all changes in the git repository
         subprocess.run(['git', 'add', '.'], check=True, capture_output=True)
@@ -19,7 +19,7 @@ def git_commit_push(branch='main'):
         today_date = datetime.now().strftime("%Y-%m-%d")
         
         # Committing the changes with a message
-        commit_message = f"Daily Data Update ({today_date})"
+        commit_message = f"{commit_message_prefix} ({today_date})"
         subprocess.run(['git', 'commit', '-m', commit_message], check=True, capture_output=True)
         
         # Pushing the changes to the remote repository and specified branch
