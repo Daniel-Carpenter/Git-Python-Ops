@@ -19,7 +19,7 @@ if __name__ == "__main__":
         
     
     # Push Data
-    push_wasSuccess, push_message = gc.git_commit_push(commit_message_prefix = 'Testing Email Success')  # Commit and push changes
+    push_wasSuccess, push_message = gc.git_commit_push(branch='thisBranchDoesNotExist', commit_message_prefix = 'Testing Email Fail')  # Commit and push changes
 
     if not push_wasSuccess:
         msg.send_email(smtp_server, port, sender_email, sender_password, recipients, 
