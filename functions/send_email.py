@@ -2,7 +2,6 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from typing import List
-import pandas as pd
 
 def send_email(smtp_server: str, port: int, sender_email: str, sender_password: str, 
                recipients: List[str], subject: str, message: str, is_html: bool = False):
@@ -32,7 +31,7 @@ def send_email(smtp_server: str, port: int, sender_email: str, sender_password: 
 
         # Quit the server
         server.quit()
-        print("Emails sent successfully!")
+        print("A log email has been sent successfully to the recepients.")
 
     except Exception as e:
         print(f"Failed to send email: {str(e)}")
