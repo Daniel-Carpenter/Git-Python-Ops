@@ -4,7 +4,7 @@ def git_pull(branch='main'):
     
     try:
         # Pulling the latest changes from the specified remote repository and branch
-        subprocess.run(['git', 'pull', 'branch', branch], check=True, capture_output=True)
+        subprocess.run(['git', 'pull', 'origin', branch], check=True, capture_output=True)
         message = "Git: Successfully pulled updates from Git remote."
         print(message)
 
