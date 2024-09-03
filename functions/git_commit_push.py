@@ -16,9 +16,13 @@ def git_commit_push(branch='main', commit_message_prefix = "Daily Data Update"):
         
         # Pushing the changes to the remote repository and specified branch
         subprocess.run(['git', 'push', 'origin', branch], check=True, capture_output=True)
-        print("Git: Successfully committed and pushed updates.")
+        message = "Git: Successfully committed and pushed updates."
+        print(message)
+
+        return [True, message]
 
     except subprocess.CalledProcessError as e:
-        print("Git Warning: Commit/Push operation failed. No changes made.")
-        print(f"Git Error details: {e.stderr.decode().strip()}")
+        message = "Git Warning: Commit/Push operation failed. No changes made.\n\n" + f"Git Error details: {e.stderr.decode().strip()}"
+        print(message)
         
+        return [False, message]
