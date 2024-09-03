@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # --------------------------------------------------------
 
     # Git Commit Message
-    commit_message_prefix = 'Add PyDoc to all functions'
+    commit_message_prefix = 'Documentation'
     
     # Get Credentials for Emailing error codes
     smtp_server, port, sender_email, sender_password, recipients = pw.get_creds()
