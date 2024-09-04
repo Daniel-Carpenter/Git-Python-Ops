@@ -33,7 +33,7 @@ def git_commit_push(branch='main', commit_message_prefix = "Daily Data Update"):
         subprocess.run(['git', 'commit', '-m', commit_message], check=True, capture_output=True)
         
         # Pushing the changes to the remote repository and specified branch
-        subprocess.run(['git', 'push', 'fail', branch], check=True, capture_output=True)
+        subprocess.run(['git', 'push', 'origin', branch], check=True, capture_output=True)
         message = "✅ Git: Successfully committed and pushed updates to Git remote."
         print(message)
 
