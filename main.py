@@ -15,7 +15,7 @@ if __name__ == "__main__":
     """
 
     # Inputs: git commit Message
-    commit_message_prefix = 'Documentation'
+    commit_message_prefix = 'Aesthetics'
 
     # Retrieve email credentials
     smtp_server, port, sender_email, sender_password, recipients = gu.get_email_credentials()

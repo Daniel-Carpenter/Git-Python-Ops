@@ -19,11 +19,11 @@ def git_pull(branch='main'):
     Raises:
         subprocess.CalledProcessError: If the git pull command fails during execution.
     """
-    
+
     try:
         # Pulling the latest changes from the specified remote repository and branch
         subprocess.run(['git', 'pull', 'origin', branch], check=True, capture_output=True)
-        message = "✅ Git: Successfully pulled updates from Git remote."
+        message = "\n✅ Git: Successfully pulled updates from Git remote."
         print(message)
 
         return [True, message]

@@ -21,7 +21,7 @@ def git_commit_push(branch='main', commit_message_prefix = "Daily Data Update"):
     Raises:
         subprocess.CalledProcessError: If the git commands fail during execution.
     """
-    
+
     try:
         # Adding all changes in the git repository
         subprocess.run(['git', 'add', '.'], check=True, capture_output=True)
@@ -35,7 +35,7 @@ def git_commit_push(branch='main', commit_message_prefix = "Daily Data Update"):
         
         # Pushing the changes to the remote repository and specified branch
         subprocess.run(['git', 'push', 'origin', branch], check=True, capture_output=True)
-        message = "✅ Git: Successfully committed and pushed updates to Git remote."
+        message = "\n✅ Git: Successfully committed and pushed updates to Git remote."
         print(message)
 
         return [True, message]
