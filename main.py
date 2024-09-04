@@ -15,10 +15,10 @@ if __name__ == "__main__":
     """
 
     # Inputs: git commit Message
-    commit_message_prefix = 'Aesthetics'
+    commit_message_prefix = 'Documentation'
 
     # Retrieve email credentials
-    smtp_server, port, sender_email, sender_password, recipients = gu.get_email_credentials()
+    smtp_server, port, sender_email, sender_password, recipients = gu.get_email_credentials() # note this is not on git for privacy.
 
     # Pull from Git and email notify on failure
     gu.git_pull_notify(smtp_server, port, sender_email, sender_password, recipients)
