@@ -9,7 +9,10 @@ def get_email_credentials():
     Returns:
         tuple: smtp_server, port, sender_email, sender_password, recipients
     """
+
     return pw.get_creds()
+
+
 
 def git_pull_notify(smtp_server, port, sender_email, sender_password, recipients):
     """
@@ -21,7 +24,10 @@ def git_pull_notify(smtp_server, port, sender_email, sender_password, recipients
         msg.send_email(smtp_server, port, sender_email, sender_password, recipients, 
             subject='Git Pull Update (Automation)', 
             message=pull_message)
+        
     return pull_wasSuccess
+
+
 
 def git_commit_push_notify(commit_message_prefix, smtp_server, port, sender_email, sender_password, recipients):
     """
@@ -33,4 +39,5 @@ def git_commit_push_notify(commit_message_prefix, smtp_server, port, sender_emai
         msg.send_email(smtp_server, port, sender_email, sender_password, recipients, 
             subject='Git Push Update (Automation)', 
             message=push_message)
+        
     return push_wasSuccess

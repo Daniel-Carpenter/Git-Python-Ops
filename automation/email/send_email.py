@@ -38,6 +38,7 @@ def send_email(smtp_server: str, port: int, sender_email: str, sender_password: 
         message = "<h2>This is a test email</h2>"
         send_email(smtp_server, port, sender_email, sender_password, recipients, subject, message, is_html=True)
     """
+    
     try:
         # Set up the server
         server = smtplib.SMTP(smtp_server, port)
