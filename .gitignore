@@ -2,3 +2,4 @@
 functions/get_creds.py
 *.pyc
 *.pyc
+automation/email/get_creds.py

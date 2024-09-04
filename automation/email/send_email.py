@@ -64,7 +64,7 @@ def send_email(smtp_server: str, port: int, sender_email: str, sender_password: 
 
         # Quit the server
         server.quit()
-        print("A log email has been sent successfully to the recipients.")
+        print("\n📧 Email Sent:\nA log email has been sent successfully to the recipients.")
 
     except Exception as e:
-        print(f"Failed to send email: {str(e)}")
+        print(f"\n⚠️ Email Warning: Failed to send email. Error code:\n{str(e)}")
